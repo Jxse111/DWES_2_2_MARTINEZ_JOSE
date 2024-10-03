@@ -17,7 +17,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         $resultado = 0;
 
         function igualdadODistincion($var1, $var2) {
-            if ($var1 === $var2) {
+            if (gettype($var1) == gettype($var2)) {
                 echo "Las variables son iguales";
             } else {
                 printf("Ambas variables son distintas, \$var1 es de tipo : %s, mientras que \$var2 es de tipo : %s"
@@ -26,15 +26,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         }
 
         /* Comprobamos si las variables pasadas por parametros  son iguales o distintos tanto el tipo como el valor.
-          En este caso el valor es distinto y el tipo tmb lo es. */
+          En este caso el tipo es distinto. */
         echo igualdadODistincion($valor1, $valor2);
         ?> 
         <br/>
         <p>En este caso vamos a ver que las variables son iguales:</p>
         <?php
         $valor1 = 1;
-        $valor2 = 1;
-        //En este caso el valor y el tipo de las variables es igual.
+        $valor2 = 10;
+        //En este caso el tipo de las variables es igual.
         echo igualdadODistincion($valor1, $valor2);
         ?>
         <h3>Si $var1 es mayor que $var2 o $var1 es múltiplo de $var2, se debe calcular y mostrar el resultado de multiplicar $var1 y $var2.</h3>
